@@ -6,7 +6,7 @@ let dato = document.getElementById("user");
 let usuario = {};
 let pass = document.getElementById("pwd");
 
-if ((dato.value.trim() === '')) || (dato.value.trim() ===''))
+if ((dato.value.trim() === '')) || (pass.value.trim() ===''))
 {
     alert("Ingresa tu nombre y contraseña para comenzar!");
 }else {
