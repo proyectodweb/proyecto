@@ -6,6 +6,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
+
+  <meta name="google-signin-client_id" content="609490000814-hn3pkoorm083k6u2h40hp98706kp708t.apps.googleusercontent.com">
+
   <title>eMercado - Todo lo que busques está aquí</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -14,9 +17,9 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <style>
-    html, body{
+        html, body{
       height: 100%;
-    }
+       }
 
     body {
       display: -ms-flexbox;
@@ -25,12 +28,13 @@
       align-items: center;
       padding-top: 40px;
       padding-bottom: 40px;
-      background-color: #f5f5f5;
+      background-color: #d3cd11;
+      color: #080808;
     }
 
     .signin {
       width: 100%;
-      max-width: 330px;
+      max-width: 530px;
       padding: 15px;
       margin: auto;
     }
@@ -39,22 +43,30 @@
 
 <body class="text-center">
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
+    <div class="formulario" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡Bienvenidos a e-Mercado!</h4>
       
       <hr>
-      <p class="mb-0">Logueate para entrar acceder a tu sitio de compras.</p>
-      <div class="container form-group">
+      <p class="mb-0">Logueate y accede a todos nuestros productos!</p>
+      <hr>
+      <div class="container form-group" style="background-color: rgba(159, 154, 16, 0.809); border-radius: 15px; border: solid 1px rgb(236, 244, 247); color: rgb(3, 12, 12); box-shadow:currentColor;">
         <form>
+          <hr>
          <label class="nombre"> Usuario <input class="form-control" type="text" id="usuario"> </label> <br>
           <label class="x"> Contraseña <input class="form-control" type="password" id="pwd"> </label> <br><br>
-
-          <button class="btn btn-primary" id="conectar" onClick="verificar()" >Logueate!</button>
         </form>
+        <hr>
     </div>
+    <button class="btn btn-info" id="conectar" onClick="verificar()" >Logueate!</button>
+    <hr>
+    <div class="g-signin2" data-onsuccess="onSignIn" style="margin-left: 45%;";</div>
   </div>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
 </body>
 </html>

@@ -8,7 +8,7 @@ let usuario = {};
 
 let pass = document.getElementById("pwd");
 
-if (dato.value.trim()=== '')
+if (dato.value.trim()=== '' || dato.value.trim()=== '')
 {
     alert("Ingresa tu nombre y contraseña para comenzar!");
 } else{
@@ -21,12 +21,21 @@ if (dato.value.trim()=== '')
 }
 };
 
-//**document.addEventListener("DOMContentLoaded", ()=>{
-//    let usuario = JSON.parse(localStorage.getItem("usuario"));
- //   if (usuario.estado==='conectado') {
-    //    location.href= "index.html";
-  //  }
-//}) 
+document.addEventListener("DOMContentLoaded", ()=>{
+ let usuario = JSON.parse(localStorage.getItem("usuario"));
+if (usuario.estado==='conectado') {
+location.href= "index.html";
+}
+})
+
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  }
+  
 
 // function desconectar (){
 //    localStorage.clear();
