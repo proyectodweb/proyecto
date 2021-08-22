@@ -20,14 +20,6 @@ if (dato.value.trim()=== '' || pass.value.trim()=== '')
     localStorage.setItem('usuario',JSON.stringify(usuario));
 }
 };
-/*
-document.addEventListener("DOMContentLoaded", ()=>{
- let usuario = JSON.parse(localStorage.getItem("usuario"));
-if (usuario.estado==='conectado') {
-location.href= "index.html";
-}
-})
-*/
 
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
@@ -42,12 +34,11 @@ usuario.estado= "conectado"
 localStorage.setItem('usuario',JSON.stringify(usuario));
 location.href= "index.html"
 }
-
-
-    
-  
-
-// function desconectar (){
-//    localStorage.clear();
-//    location.href ="index.html"
-//}
+/*
+document.addEventListener("DOMContentLoaded", ()=>{
+ let usuario = JSON.parse(localStorage.getItem("usuario"));
+if (usuario.estado==='conectado') {
+location.href= "index.html";
+}
+})
+*/
