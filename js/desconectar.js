@@ -3,7 +3,7 @@ function desconectar(){
     localStorage.clear();
     sessionStorage.clear();
     usuario.estado="desconectado";
-    location.href= "login.html"
+    location.href= "index.html"
     signOut();               
 }
 // csi deshabilito sign out --con local host al desconectar me vuelve al index. de la otra forma no

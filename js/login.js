@@ -13,7 +13,7 @@ if (dato.value.trim()=== '' || pass.value.trim()=== '')
     alert("Ingresa tu nombre y contraseña para comenzar!");
 } else{
 
-    location.href ="index.html";
+    location.href ="principal.html";
     usuario.nombre =dato.value;
     usuario.estado ="conectado";
 
@@ -32,7 +32,7 @@ function onSignIn(googleUser) {
 usuario.nombre=profile.getName();
 usuario.estado= "conectado"
 localStorage.setItem('usuario',JSON.stringify(usuario));
-location.href= "index.html"
+location.href= "principal.html"
 }
 /*
 document.addEventListener("DOMContentLoaded", ()=>{
