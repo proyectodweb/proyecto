@@ -8,25 +8,26 @@ let usuario = {};
 
 let pass = document.getElementById("pwd");
 
-if (dato.value.trim()=== '' || dato.value.trim()=== '')
+if (dato.value.trim()=== '' || pass.value.trim()=== '')
 {
     alert("Ingresa tu nombre y contraseña para comenzar!");
 } else{
 
     location.href ="index.html";
     usuario.nombre =dato.value;
-    usuario.estado ="Conectado";
+    usuario.estado ="conectado";
 
     localStorage.setItem('usuario',JSON.stringify(usuario));
 }
 };
-
+/*
 document.addEventListener("DOMContentLoaded", ()=>{
  let usuario = JSON.parse(localStorage.getItem("usuario"));
 if (usuario.estado==='conectado') {
 location.href= "index.html";
 }
 })
+*/
 
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
