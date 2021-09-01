@@ -2,7 +2,7 @@ function desconectar(){
     let usuario = JSON.parse(localStorage.getItem("usuario"));
     localStorage.clear();
     sessionStorage.clear();
-    usuario.estado="desconectado";
+    
     location.href= "index.html"
     signOut();               
 }
@@ -13,7 +13,7 @@ function signOut() {
       var auth2 = gapi.auth2.getAuthInstance();
       auth2.signOut().then(function () {
           auth2.desconectar();
-          
+          location.href= "index.html"
       });
       
     }
