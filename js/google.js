@@ -23,10 +23,10 @@ location.href= "principal.html"
     auth2.signOut().then(function () {
    auth2.desconectar();
    // let usuario = JSON.parse(localStorage.getItem("usuario"));*/
+    
+    location.href= "index.html"
     localStorage.clear();
     sessionStorage.clear();
-    location.href= "index.html"
-    
     });
         
   }

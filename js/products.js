@@ -3,7 +3,7 @@
 //elementos HTML presentes.
 var categoriesArray = [];
 
-function showCategoriesList(array){
+function showProductList(array){
     let htmlContentToAppend = "";
    
     for (let i = 0; i < array.length; i++){
@@ -35,9 +35,55 @@ document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
       categoriesArray = resultObj.data;
-      showCategoriesList(categoriesArray);  
+      showProductList(categoriesArray);  
       console.log(categoriesArray); 
-      //showCategoriesList = resultObj.data; 
+ 
       }
     });
 });
+
+
+function ordenAscendente() {
+    categoriesArray.sort((a,b) =>{
+    if (a.cost > b.cost){
+     return 1;
+    }
+    if (a.cost < b.cost){
+        return -1;
+    }else {
+     return 0;
+    }
+    });
+
+    showProductList(categoriesArray)
+}
+
+function ordenDescendente() {
+    categoriesArray.sort((a,b) =>{
+    if (a.cost < b.cost){
+     return 1;
+    }
+    if (a.cost > b.cost){
+        return -1;
+    }else {
+     return 0;
+    }
+    });
+
+    showProductList(categoriesArray);
+    
+    }
+
+    function filtrar(){
+        var minimo = parseInt(document.getElementById("minimo").value);
+        var maximo = parseInt(document.getElementById("maximo").value);
+
+        let filtrados = [];
+
+        for(let product of categoriesArray) {
+            if (product.cost >= minimo && product.cost <= maximo){
+                filtrados.push(product);
+            }
+        }
+        showProductList(filtrados);
+    }
