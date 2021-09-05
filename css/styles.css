@@ -139,3 +139,14 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.lupa {
+  background: url('../img/lupa.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 10%;
+  position: relative;
+  height: 200px;
+  background-color: #d3cd11;
+}
