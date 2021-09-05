@@ -1,7 +1,7 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-var categoriesArray = [];
+var productArray = [];
 
 function showProductList(array){
     let htmlContentToAppend = "";
@@ -34,9 +34,9 @@ function showProductList(array){
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
-      categoriesArray = resultObj.data;
-      showProductList(categoriesArray);  
-      console.log(categoriesArray); 
+      productArray = resultObj.data;
+      showProductList(productArray);  
+      console.log(productArray); 
  
       }
     });
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
 function ordenAscendente() {
-    categoriesArray.sort((a,b) =>{
+    productArray.sort((a,b) =>{
     if (a.cost > b.cost){
      return 1;
     }
@@ -55,11 +55,11 @@ function ordenAscendente() {
     }
     });
 
-    showProductList(categoriesArray)
+    showProductList(productArray)
 }
 
 function ordenDescendente() {
-    categoriesArray.sort((a,b) =>{
+    productArray.sort((a,b) =>{
     if (a.cost < b.cost){
      return 1;
     }
@@ -70,7 +70,7 @@ function ordenDescendente() {
     }
     });
 
-    showProductList(categoriesArray);
+    showProductList(productArray);
     
     }
 
@@ -80,10 +80,41 @@ function ordenDescendente() {
 
         let filtrados = [];
 
-        for(let product of categoriesArray) {
+        for(let product of productArray) {
             if (product.cost >= minimo && product.cost <= maximo){
                 filtrados.push(product);
             }
         }
         showProductList(filtrados);
     }
+
+    function relAscendente() {
+     productArray.sort((a,b) => {
+         if (a.soldCount > b.soldCount) {
+             return 1;
+         }
+         if (a.soldCount < b.soldCount) {
+             return -1;
+         }else{
+             return 0;
+         }
+     });
+
+     showProductList(productArray);
+    }
+
+    let coincidentes = [];
+    
+    function buscar(){
+        let buscado = document.getElementById("buscador").value; //obteno lo que escribi del campo buscar
+        
+        let coincidentes = productArray.filter(product => {
+            return product.name.toLowerCase().indexOf(buscado.toLowerCase()) > -1;
+          //  return product.description.toLowerCase().indexOf(buscado.toLowerCase()) > -1;
+        })
+        showProductList(coincidentes);
+    };
+
+    document.getElementById("buscador").addEventListener("keyup", () => {
+        buscar();
+    });

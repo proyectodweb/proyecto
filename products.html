@@ -17,6 +17,7 @@
 </head>
 
 <body>
+  <br>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -24,13 +25,21 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <a class="py-2 d-none d-md-inline-block" id="nombre" style="color: chartreuse;"></a>
     </div>
   </nav>
-
-  <div class="text-center p-4">
+  
+    <div class="text-center p-4">
     <h2>Productos</h2>
     <p class="lead">Verás aquí todos los productos del sitio.</p>
   </div>
+
+  <div class="text-center p-4">
+        <input type="text" placeholder="Escribe aqui lo que buscas!" id="buscador">
+    <button  type="button" onclick="buscar()">buscar</button>
+  </div>
+
+
   <div class="container">
     <div class="row">
       <div class="col text-right">
@@ -41,8 +50,8 @@
           <label class="btn btn-light" id="descendente" onclick="ordenDescendente();">
             <input type="radio" name="options" autocomplete="off">De mayor a menor
           </label>
-          <label class="btn btn-light" id="sortByCount">
-            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.
+          <label class="btn btn-light" id="sortByCount" onclick="relAscendente()">
+            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relev.
           </label>
         </div>
       </div>
@@ -58,7 +67,7 @@
             Min<input class="form-control" type="number" value="0" id="minimo">
           </div>
           <div class="col">
-            Max <input class="form-control" type="number" value="50.000" id="maximo">
+            Max <input class="form-control" type="number" value="50000" id="maximo">
 
 
           </div>
@@ -97,6 +106,11 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
+
+  <script>
+    let usuario = JSON.parse(localStorage.getItem("usuario"));
+     document.getElementById('nombre').innerHTML= "Bienvenid@  " + usuario.nombre + "!!";
+   </script>
 
 </body>
 
