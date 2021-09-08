@@ -150,3 +150,8 @@ a.custom-card:hover {
   height: 200px;
   background-color: #d3cd11;
 }
+
+.fondo {
+  background: url('../img/background1.jpg');
+  background-size: cover;
+}

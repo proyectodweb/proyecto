@@ -11,8 +11,9 @@ function showProductList(array){
         let product = array[i];
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
+        <a href="product-info.html" class="list-group-item list-group-item-action">
       <div class="row">
-         
+        
                 <div class="col-3">
                          <img src="` + product.imgSrc + `"alt="` + product.description + `" class="img-thumbnail">    
                  </div>
@@ -27,6 +28,7 @@ function showProductList(array){
                   </div>
             </div>
         </div>
+        </a>
         `
     document.getElementById("cat-list-container").innerHTML= htmlContentToAppend;
     };
@@ -109,8 +111,8 @@ function ordenDescendente() {
         let buscado = document.getElementById("buscador").value; //obteno lo que escribi del campo buscar
         
         let coincidentes = productArray.filter(product => {
-            return product.name.toLowerCase().indexOf(buscado.toLowerCase()) > -1;
-          //  return product.description.toLowerCase().indexOf(buscado.toLowerCase()) > -1;
+            return product.name.toLowerCase().indexOf(buscado.toLowerCase()) > -1 ||
+            product.description.toLowerCase().indexOf(buscado.toLowerCase()) > -1;
         })
         showProductList(coincidentes);
     };

@@ -55,30 +55,34 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-end">
 
-      <div class="col-md col-sm-12 mb-1 container">
+
+    <div class="row justify-content-center">
+
+      <div class="col-md col-sm-12 mb-1 container style= justify-content: flex-end ">
         <div class="row container p-0 m-0">
-          <div class="col">
-            <p style="text-align: center;">Precio</p>
+          <div class="col-2">
+            <p style="text-align: right; padding-top: 20px;">Precio</p>
           </div>
-          <div class="col-3">
+          <div class="col-3 ">
             Min<input class="form-control" type="number" value="0" id="minimo">
           </div>
-          <div class="col">
+          <div class="col-3">
             Max <input class="form-control" type="number" value="50000" id="maximo">
-
-
           </div>
-          <div class="col-3 p-0 text-align text-right">
-            <div class="btn-group" role="group">
+
+          <div class="col-3">
+            <div class="btn-group" role="group" style="padding-top: 20px;">
               <button class="btn btn-light btn-block" id="rangeFilterCount" onclick="filtrar();">Filtrar</button>
               <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
             </div>
           </div>
+
         </div>
       </div>
     </div>
+
+
     <div class="row">
       <div class="list-group" id="cat-list-container">
       </div>
