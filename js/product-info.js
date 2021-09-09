@@ -46,3 +46,45 @@ showDetails(product.images)
      });
     
 });
+
+
+
+
+
+var commentArray = [];
+
+function showCommentList(array){
+    let htmlContentToAppend = "";
+
+    for (let i = 0; i < array.length; i++){
+        let comment = array[i];
+
+        htmlContentToAppend +=`
+        <div class="col-6">
+            <div class="col-6">
+            <h4>` + comment.score + `</h4>  
+            </div>
+            <p class="mb-1"><b>` + comment.description +` </b> </p>
+            <h4 class="mb-1">` + comment.user +` </h4>
+            <p class="mb-1">` + comment.dateTime +` </p>
+            <hr> 
+        </div>
+
+
+        `
+        document.getElementById("comentarios").innerHTML = htmlContentToAppend;
+    };
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function(e){
+    //function showCommentList(){  
+    getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj) {
+            if (resultObj.status === "ok") {
+                commentArray = resultObj.data;
+     showCommentList(commentArray);
+    console.log(commentArray);
+     }
+        });
+    });
