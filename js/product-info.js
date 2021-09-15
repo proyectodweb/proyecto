@@ -60,14 +60,16 @@ function showCommentList(array){
         let comment = array[i];
 
         htmlContentToAppend +=`
-        <div class="col-6">
-            <div class="col-6">
-            <h4>` + comment.score + `</h4>  
+        <div class="col-12">
+            <div">
+            <h4 style="text-align: right">` + comment.score + `</h4>  
             </div>
+            <div>
             <p class="mb-1"><b>` + comment.description +` </b> </p>
             <h4 class="mb-1">` + comment.user +` </h4>
-            <p class="mb-1">` + comment.dateTime +` </p>
+            <p class="mb-1" style="text-align: right" >` + comment.dateTime +` </p>
             <hr> 
+            </div>
         </div>
 
 
@@ -88,3 +90,23 @@ document.addEventListener("DOMContentLoaded", function(e){
      }
         });
     });
+
+var star = 1;
+//FORMULARIO
+function envia(){
+
+//document.getElementById("enviar").addEventListener("click", () => {
+
+let comentario = {};
+let usuario = JSON.parse(localStorage.getItem('usuario'))
+
+comentario.user = usuario.nombre;
+comentario.score = document.getElementById("stars").value;
+comentario.description = document.getElementById("commentario").value;
+
+commentArray.push(comentario);
+showCommentList(commentArray);
+
+}
+
+// star= num

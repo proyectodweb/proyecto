@@ -69,15 +69,25 @@
 <div class="flex-container-left col-6" style="padding: 10px; border-radius: 8px; margin-left: auto; background-color: #fbf4b3; flex: 50%; text-align: center;" >
   <h2>Cuentanos tu experiecia de compra!</h2>
   <br>
-  <label for="comment"></label>
-  <textarea name="comment" id="commentario" cols="40" rows="5" style="align-items: center;" ></textarea>
+
+
+
+
+  <label> Nombre <input type="text"></label><br>
+  <label> Estrellas <input type="number" id="stars"></label><br>
+  <textarea name="comment" id="commentario" cols="40" rows="5" style="align-items: center;" ></textarea><br>
+  <button type="button" onclick="envia();" style="left: 0%;">Enviar</button>
 </div>
+
+
+
 
 <div id="comentarios" class="flex-item-right col-6" style="background-color: wheat; flex: 50%;" >
 </div>
 
 </div>
 </div>
+<br>
 <div>
   <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
 </div>
