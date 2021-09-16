@@ -61,23 +61,21 @@ function showCommentList(array){
 
         htmlContentToAppend +=`
         <div class="col-12">
-            <div">
-            <h4 style="text-align: right">` + comment.score + `</h4>  
+            <div  style="margin-top: 15px">
+            <h6 style="text-align: right">` + gemas(comment.score) + `</h6>  
             </div>
             <div>
-            <p class="mb-1"><b>` + comment.description +` </b> </p>
-            <h4 class="mb-1">` + comment.user +` </h4>
+            <p class="mb-1"> `+ comment.description +` </p>
+            <h6 class="mb-1">` + comment.user +` </h6>
             <p class="mb-1" style="text-align: right" >` + comment.dateTime +` </p>
             <hr> 
             </div>
         </div>
 
-
         `
         document.getElementById("comentarios").innerHTML = htmlContentToAppend;
     };
 }
-
 
 
 document.addEventListener("DOMContentLoaded", function(e){
@@ -95,18 +93,32 @@ var star = 1;
 //FORMULARIO
 function envia(){
 
-//document.getElementById("enviar").addEventListener("click", () => {
-
 let comentario = {};
 let usuario = JSON.parse(localStorage.getItem('usuario'))
+let fecha = {};
+
 
 comentario.user = usuario.nombre;
-comentario.score = document.getElementById("stars").value;
+comentario.score = document.getElementById("star").value;
 comentario.description = document.getElementById("commentario").value;
+comentario.dateTime = new Date()
 
 commentArray.push(comentario);
 showCommentList(commentArray);
-
 }
 
-// star= num
+
+//usar diamantes para calificar!
+function gemas(numero) {
+    let diamantes = ""; //texto vacio
+
+    for (let i=1; i<=5; i++){
+
+        if (i<=numero){
+            diamantes += '<i class="fas fa-gem"></i>';
+        }else{
+            diamantes += '';//<i class="far fa-gem"></i>
+        }
+    }
+    return diamantes;
+}

@@ -25,21 +25,21 @@
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
     </div>
   </nav>
-  <div class="text-center p-4" style="background-color: #d3cd11;">
+
+
+                  <!-- ENCABEZADO -->
+  <div class="text-center p-4" style="background-color: #dfd0e3; color: black;">
   <div class="container flex" style="padding: 10px; ; border-radius: 8px; margin-left: auto;" >
    <br>
     <dt>Nombre:</dt>
     <dd>
-    <h3 id="producto.nombre"></h3><br>
+    <h3 id="producto.nombre"></h3>
     <hr class="my-3">
-    
   </div>
-</div>
+</div><br>
 
-
-<div class="container flex fondo" style="padding: 10px; border: solid 2px #fbf4b3 ; border-radius: 8px; margin-left: auto; color: white;" >
-
- 
+                  <!-- CONTENEDOR 1 -->
+<div class="container flex fondo col-8" style="padding: 10px; border: solid 2px #30091d ; border-radius: 8px; margin-left: auto; color: white;" >
     <dt>Descripción</dt>
     <dd>
       <p id="producto.descripcion"></p>
@@ -60,46 +60,53 @@
       <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
       </div></dd>
 
-</div>
-<br><br>
+</div><br>
 
-<div class="flex-container col-12" style="display: flex;;" >
+
+                  <!-- CONTENEDOR 2 -->
+<div class="container flex fondo2 col-8" style="padding: 10px; border: solid 2px #30091d ; border-radius: 8px; margin-left: auto; color: rgb(51, 51, 51);" >
   <div class="row" style="margin: auto;" >
 
-<div class="flex-container-left col-6" style="padding: 10px; border-radius: 8px; margin-left: auto; background-color: #fbf4b3; flex: 50%; text-align: center;" >
+
+
+    <!-- FORMULARIO -->
+<div class="flex-container-left col-6" style="padding: 10px; border-radius: 8px; margin-left: auto; background-color: #dfd0e3; color: black; flex: 50%; text-align: center;" >
   <h2>Cuentanos tu experiecia de compra!</h2>
   <br>
-
-
-
-
-  <label> Nombre <input type="text"></label><br>
-  <label> Estrellas <input type="number" id="stars"></label><br>
+ 
+  <label> Estrellas <input type="number" id="star" max="5"></label><br>
   <textarea name="comment" id="commentario" cols="40" rows="5" style="align-items: center;" ></textarea><br>
   <button type="button" onclick="envia();" style="left: 0%;">Enviar</button>
+
+
+  <!-- DIAMANTE -->
+  <div>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets7.lottiefiles.com/packages/lf20_UBEqbQ.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px; margin-left: 20%;"  loop  autoplay></lottie-player>
+  </div>
 </div>
 
 
+<!-- COMENTARIOS JSON-->
 
-
-<div id="comentarios" class="flex-item-right col-6" style="background-color: wheat; flex: 50%;" >
+<div id="comentarios" class="flex-item-right col-6" style="background-color: #384a83; color: white; flex: 50%;" >
 </div>
 
 </div>
 </div>
 <br>
+
+
 <div>
   <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
 </div>
 
 
   <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
+    <div>
+      <p class="text-center">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
   <div id="spinner-wrapper">
