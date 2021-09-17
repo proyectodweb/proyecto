@@ -1,6 +1,6 @@
 var product = {};
 
-function showDetails(array){
+function showDetails(array){//reconoce que hay un array dentro del objeto??
 
     let htmlContentToAppend = "";
 
@@ -41,7 +41,7 @@ productCurr.innerHTML = product.currency;
 productCost.innerHTML = product.cost;
 
 
-showDetails(product.images)
+showDetails(product.images) // porque product.image??
         }
      });
     
@@ -57,7 +57,7 @@ function showCommentList(array){
     let htmlContentToAppend = "";
 
     for (let i = 0; i < array.length; i++){
-        let comment = array[i];
+        let comment = array[i]; // COMO SE LEE ESTO? es el objeto que representa a cada item ?
 
         htmlContentToAppend +=`
         <div class="col-12">
@@ -65,7 +65,7 @@ function showCommentList(array){
             <h6 style="text-align: right">` + gemas(comment.score) + `</h6>  
             </div>
             <div>
-            <p class="mb-1"> `+ comment.description +` </p>
+            <p class="mb-1"> `+ " '' " + comment.description + " '' " + ` </p>
             <h6 class="mb-1">` + comment.user +` </h6>
             <p class="mb-1" style="text-align: right" >` + comment.dateTime +` </p>
             <hr> 
