@@ -62,7 +62,7 @@ function showCommentList(array){
         htmlContentToAppend +=`
         <div class="col-12">
             <div  style="margin-top: 15px">
-            <h6 style="text-align: right">` + gemas(comment.score) + `</h6>  
+            <h6 id="puntuacion" style="text-align: right">` + gemas(comment.score) + `</h6>  
             </div>
             <div>
             <p class="mb-1"> `+ " '' " + comment.description + " '' " + ` </p>
