@@ -48,7 +48,7 @@
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background-color: #4f1734;
+  background-color: #384a83;
 }
 
 footer p {
@@ -149,10 +149,44 @@ a.custom-card:hover {
   background-size: 10%;
   position: relative;
   height: 200px;
-  background-color: #d3cd11;
+  background-color: #dfd0e3;
 }
 
 .fondo {
   background: url('../img/background1.jpg');
   background-size: cover;
 }
+
+#gem {
+  border-color: #872c83;
+  background-color: #d0afce;
+}
+
+#commentario {
+border-color: #872c83;
+border-top-left-radius: 6px;
+border-bottom-left-radius: 6px;
+}
+
+#botonEnviar {
+width: 60px;
+border-radius: 5px;
+padding: 5px;
+background-color: #872c83;
+color: whitesmoke;
+}
+
+#botonEnviar:hover {
+  border-radius: 5px;
+  padding: 5px;
+  background-color: black;
+  color: aqua;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  }
+
+  #imgs:hover {
+    -webkit-transform: scale(-1);
+    transform: scaleX(-1);
+
+  }

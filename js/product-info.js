@@ -10,7 +10,7 @@ function showDetails(array){//reconoce que hay un array dentro del objeto??
         htmlContentToAppend += `
         <div class="col-lg-3 col-md-4 col-6">
             <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
+                <img id="imgs" class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
             </div>
         </div>
         `
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         });
     });
 
-var star = 1;
+var gem = 1;
 //FORMULARIO
 function envia(){
 
@@ -99,12 +99,15 @@ let fecha = {};
 
 
 comentario.user = usuario.nombre;
-comentario.score = document.getElementById("star").value;
+comentario.score = document.getElementById("gem").value;
 comentario.description = document.getElementById("commentario").value;
 comentario.dateTime = new Date()
 
 commentArray.push(comentario);
 showCommentList(commentArray);
+
+document.getElementById("gem").value ="";
+document.getElementById("commentario").value=""
 }
 
 
