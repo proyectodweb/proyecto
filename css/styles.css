@@ -190,3 +190,9 @@ color: whitesmoke;
     transform: scaleX(-1);
 
   }
+  .btn-info:hover {
+    background-color: black;
+    color: aqua;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
