@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
       productArray = resultObj.data;
       showProductList(productArray);  
       console.log(productArray); 
+      //showRelatedImages(productArray.imageSrc)
  
       }
     });

@@ -14,18 +14,32 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
+ 
+  <nav class="site-header sticky-top py-1 bg-dark" id="navbar">
+    
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" id="nombre" style="color: chartreuse;"></a>
+     
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="boton"> <a class="py-2 d-none d-md-inline-block"  id="nombre" style="color: chartreuse;"></a> <span class="sr-only">Toggle Dropdown</span> </button>
+    <div class="dropdown-content">
+      <a href="#">Mi Perfil</a>
+      <a href="#">otra cosa</a>
+      <a href="#">mas cosa</a>
     </div>
+    </div>
+    </div>
+  
   </nav>
 
 
@@ -60,6 +74,10 @@
     <dt>Imágenes ilustrativas</dt>
     <dd>
       <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+
+        </div>
+      <div>
+        <div class="row text-center text-lg-left pt-2" id="relimages"></div>
       </div></dd>
 
 </div><br>
@@ -123,7 +141,9 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
   <script src="js/product-info.js"></script>
+  
   <script>
     let usuario = JSON.parse(localStorage.getItem("usuario"));
      document.getElementById('nombre').innerHTML= "Bienvenid@  " + usuario.nombre + "!!";

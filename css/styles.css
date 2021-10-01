@@ -200,3 +200,52 @@ color: whitesmoke;
   #puntuacion {
     color: #d0afce;
   }
+
+#navbar {
+  overflow: hidden;
+  border: chartreuse;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.boton {
+  font-size: inherit;
+border: none;
+outline: none;
+background-color: inherit;
+font-family: inherit;
+margin: 0;
+padding: 0px;
+}
+
+.dropdown-content {
+  display: none;
+ position: relative;
+ background-color: whitesmoke;
+ min-width: 100px;
+ box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.2);
+ z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: chartreuse;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

@@ -1,6 +1,8 @@
 var product = {};
 
-function showDetails(array){//reconoce que hay un array dentro del objeto??
+function showDetails(array){
+    //porq al declarar la funcion le dije q era solo para product.image
+    //(toda la data esta en product y accedo a el array image)
 
     let htmlContentToAppend = "";
 
@@ -19,7 +21,46 @@ function showDetails(array){//reconoce que hay un array dentro del objeto??
     }
 
 }
+document.addEventListener("DOMContentLoaded", function (e) {
+    getJSONData(PRODUCT_URL).then(function (resultObj) { 
+    if (resultObj.status === "ok") {
+        allRelatedProduct = resultObj.data;
+        showRelatedProducts(allRelatedProduct);
+    }
+    });
+});
 
+var productrelated = [];
+//var productrelated = product.relatedProducts;
+//var productArray = [];
+//productArray.imageSrc = productArray
+
+//console.log(productArray)
+function showRelatedProducts(arrayrelated){
+
+  htmlContentToAppend = "";
+
+    for(let j = 0; j < arrayrelated.length; j++){
+        let related = arrayrelated[j];
+
+        for(let k = 0; k < productArray.length; k++){
+    let otros = productArray[k]
+    if (arrayrelated[k]===j)
+                console.log(arrayrelated)
+            }
+            }
+    
+
+        htmlContentToAppend += `
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="d-block mb-4 h-100">
+                <img id="imgs" class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
+            </div>
+        </div>
+        `
+    
+        document.getElementById("relimages").innerHTML = htmlContentToAppend;
+    };
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -41,7 +82,8 @@ productCurr.innerHTML = product.currency;
 productCost.innerHTML = product.cost;
 
 
-showDetails(product.images) // porque product.image??
+showDetails(product.images) // product.image (product es donde guarde la data e image es el array adentro donde estan todas las fotos)
+showRelatedProducts(product.relatedProducts)
         }
      });
     
