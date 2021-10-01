@@ -34,7 +34,7 @@
         <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="boton"> <a class="py-2 d-none d-md-inline-block"  id="nombre" style="color: chartreuse;"></a> <span class="sr-only">Toggle Dropdown</span> </button>
     <div class="dropdown-content">
       <a href="#">Mi Perfil</a>
-      <a href="#">otra cosa</a>
+      <a href="#" onclick="desconectar()">Desconectar</a>
       <a href="#">mas cosa</a>
     </div>
     </div>
@@ -143,6 +143,8 @@
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/desconectar.js"></script>
+  <script src="js/google.js"></script>
   
   <script>
     let usuario = JSON.parse(localStorage.getItem("usuario"));
