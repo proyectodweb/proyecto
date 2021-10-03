@@ -8,7 +8,7 @@ function showProductList(array){
    
     for (let i = 0; i < array.length; i++){
 
-        // <div class="list-group-item list-group-item-action"> le saque esta primera linea al htmlcontenttoappernd
+
         let product = array[i];
         htmlContentToAppend += `
        
