@@ -32,7 +32,9 @@ function showRelated(allProductInfo, product) {
         htmlContentToAppend += `
         <div class="col-lg-3 col-md-6 col-6">
             <div class="d-block mb-4 h-100">
+            <dt>` + product[productrelated].name + `</dt>
                 <img id="imgs" class="img-fluid img-thumbnail" src="` + product[productrelated].imgSrc + `" alt="">
+                <h6>` + product[productrelated].currency + " " + product[productrelated].cost +`</h6>
             </div>
         </div>
         `
@@ -84,7 +86,7 @@ function showRelated(allProductInfo, product) {
         let htmlContentToAppend = "";
 
         for (let i = 0; i < array.length; i++) {
-            let comment = array[i]; // COMO SE LEE ESTO? es el objeto que representa a cada item ?
+            let comment = array[i]; // aca voy acumulando cada item del array[i]
 
             htmlContentToAppend += `
         <div class="col-12">

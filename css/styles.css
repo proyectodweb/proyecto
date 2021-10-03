@@ -249,3 +249,9 @@ padding: 0px;
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+#relimages {
+  background-color: black;
+  border-radius: inherit;
+  justify-content: center;
+}
