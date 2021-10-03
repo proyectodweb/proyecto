@@ -20,42 +20,45 @@
 </head>
 
 <body>
- 
+
   <nav class="site-header sticky-top py-1 bg-dark" id="navbar">
-    
+
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-     
+
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="boton"> <a class="py-2 d-none d-md-inline-block"  id="nombre" style="color: chartreuse;"></a> <span class="sr-only">Toggle Dropdown</span> </button>
-    <div class="dropdown-content">
-      <a href="#">Mi Perfil</a>
-      <a href="#" onclick="desconectar()">Desconectar</a>
-      <a href="#">mas cosa</a>
+        <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="boton"> <a
+            class="py-2 d-none d-md-inline-block" id="nombre" style="color: chartreuse;"></a> <span
+            class="sr-only">Toggle Dropdown</span> </button>
+        <div class="dropdown-content">
+          <a href="#">Mi Perfil</a>
+          <a href="#" onclick="desconectar()">Desconectar</a>
+          <a href="#">mas cosa</a>
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
-  
+
   </nav>
 
 
-                  <!-- ENCABEZADO -->
+  <!-- ENCABEZADO -->
   <div class="text-center p-4" style="background-color: #dfd0e3; color: black;">
-  <div class="container flex" style="padding: 10px; ; border-radius: 8px; margin-left: auto;" >
-   <br>
-    <dt>Nombre:</dt>
-    <dd>
-    <h3 id="producto.nombre"></h3>
-    <hr class="my-3">
-  </div>
-</div><br>
+    <div class="container flex" style="padding: 10px; ; border-radius: 8px; margin-left: auto;">
+      <br>
+      <dt>Nombre:</dt>
+      <dd>
+        <h3 id="producto.nombre"></h3>
+        <hr class="my-3">
+    </div>
+  </div><br>
 
-                  <!-- CONTENEDOR 1 -->
-<div class="container flex fondo col-8" style="padding: 10px; border: solid 2px #30091d ; border-radius: 8px; margin-left: auto; color: white;" >
+  <!-- CONTENEDOR 1 -->
+  <div class="container flex fondo col-8"
+    style="padding: 10px; border: solid 2px #30091d ; border-radius: 8px; margin-left: auto; color: white;">
     <dt>Descripción</dt>
     <dd>
       <p id="producto.descripcion"></p>
@@ -75,56 +78,64 @@
     <dd>
       <div class="row text-center text-lg-left" id="productImagesGallery">
 
-        </div>
-     </dd>
+      </div>
+    </dd>
 
-</div><br>
+  </div><br>
+  <div>
+    <h3 style="text-align: center; padding: 5px;">Productos Relacionados</h3>
+  </div><br>
 
-<div class="container flex col-8" style="padding: 5px; border-radius: 8px; margin-left: auto; margin-right: auto; color: white;" >
-
-  <div class="row text-center text-lg-center pt-2" id="relimages" ></div>
-</div>
-
- <br>
-
-                  <!-- CONTENEDOR 2 -->
-<div class="container flex col-8" style="padding: 10px; border: solid 2px #30091d ; border-radius: 8px; margin-left: auto; color: rgb(51, 51, 51);" >
-  <div class="row" style="margin: auto;" >
-
-
-
-    <!-- FORMULARIO -->
-<div class="flex-container-left col-6" style="padding: 10px; border-radius: 8px; margin-left: auto; background-color: #dfd0e3; color: black; flex: 50%; text-align: center;" >
-  <h2>Cuentanos tu experiecia de compra!</h2>
-  <br>
- 
-  <label> Calificanos en gemas! <input type="number" id="gem" max="5"></label><br>
-  <textarea name="comment" id="commentario" cols="40" rows="5" style="align-items: center;" placeholder=" Cuentale a otros usuarios como fue tu compra!"></textarea><br>
-  <button type="button" id="botonEnviar" class="animate__animated animate__heartBeat animate__repeat-3" onclick="envia();" style="left: 0%;"><i class="fas fa-share-square"></i></button>
-
-
-  <!-- DIAMANTE -->
+  <div class="container flex col-8" style="padding: 5px; border-radius: 8px; margin-left: auto; margin-right: auto; color: white;">
+    
+      <div class="row text-center text-lg-left pt-2" id="relimages"></div>
   
-  <div class="container-flex" style="text-align: center; margin-left: 20%;">
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_ac86ifrb.json"  background="transparent"  speed="0.5"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
-   </div>
-</div>
+    </div>
+  <br>
+
+  <!-- CONTENEDOR 2 -->
+  <div class="container flex col-8"
+    style="padding: 10px; border: solid 2px #30091d ; border-radius: 8px; margin-left: auto; color: rgb(51, 51, 51);">
+    <div class="row" style="margin: auto;">
 
 
-<!-- COMENTARIOS JSON-->
 
-<div id="comentarios" class="flex-item-right col-6" style="background-color: #050a18; color: white; flex: 50%;" >
-</div>
+      <!-- FORMULARIO -->
+      <div class="flex-container-left col-6"
+        style="padding: 10px; border-radius: 8px; margin-left: auto; background-color: #dfd0e3; color: black; flex: 50%; text-align: center;">
+        <h2>Cuentanos tu experiecia de compra!</h2>
+        <br>
 
-</div>
-</div>
-<br>
+        <label> Calificanos en gemas! <input type="number" id="gem" max="5"></label><br>
+        <textarea name="comment" id="commentario" cols="40" rows="5" style="align-items: center;"
+          placeholder=" Cuentale a otros usuarios como fue tu compra!"></textarea><br>
+        <button type="button" id="botonEnviar" class="animate__animated animate__heartBeat animate__repeat-3"
+          onclick="envia();" style="left: 0%;"><i class="fas fa-share-square"></i></button>
 
 
-<div>
-  <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
-</div>
+        <!-- DIAMANTE -->
+
+        <div class="container-flex" style="text-align: center; margin-left: 20%;">
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+          <lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_ac86ifrb.json" background="transparent"
+            speed="0.5" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+        </div>
+      </div>
+
+
+      <!-- COMENTARIOS JSON-->
+
+      <div id="comentarios" class="flex-item-right col-6" style="background-color: #050a18; color: white; flex: 50%;">
+      </div>
+
+    </div>
+  </div>
+  <br>
+
+
+  <div>
+    <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+  </div>
 
 
   <footer class="text-muted">
@@ -149,11 +160,11 @@
   <script src="js/product-info.js"></script>
   <script src="js/desconectar.js"></script>
   <script src="js/google.js"></script>
-  
+
   <script>
     let usuario = JSON.parse(localStorage.getItem("usuario"));
-     document.getElementById('nombre').innerHTML= "Bienvenid@  " + usuario.nombre + "!!";
-   </script>
+    document.getElementById('nombre').innerHTML = "Bienvenid@  " + usuario.nombre + "!!";
+  </script>
 
 </body>
 

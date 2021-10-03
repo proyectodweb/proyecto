@@ -255,3 +255,7 @@ padding: 0px;
   border-radius: inherit;
   justify-content: center;
 }
+
+#imgs:hover {
+  scale: 1.2;
+}

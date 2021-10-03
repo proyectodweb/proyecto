@@ -27,8 +27,10 @@ location.href= "principal.html"
     location.href= "index.html"
     localStorage.clear();
     sessionStorage.clear();
+    document.getElementsByName("usuario").value = "";
+    document.getElementById("pwd").value = "";
     });
-        
+    
   }
   //signOut()
  /* usuario.nombre=profile.getName();
