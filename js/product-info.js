@@ -78,8 +78,6 @@ function showRelated(allProductInfo, product) {
 
 
 
-
-
     var commentArray = [];
 
     function showCommentList(array) {
