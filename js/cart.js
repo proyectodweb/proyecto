@@ -5,23 +5,23 @@ function showCart(array) {
     let htmlContentToAppend = "";
 
     for (let i = 0; i < array.length; i++) {
-        
+
         let compras = array[i];
 
         htmlContentToAppend += `
-        <a href="product-info.html" class="mostrarcarrito">
+        <hr>
         <div class="row">
-                            <div class="col-3">
-                           <img src="` + compras.src + `"alt="` + compras.name + `" class="img-thumbnail">    
-                   </div>
-                   <div class="col">
-                      
-                           <div class="w-100"><b>` + compras.currency + "  " + compras.unitCost +` </b>
-                           </div>
-                    </div>
-              </div>
+                        <div class="col-3 carri">
+                            <h6>`+ compras.name + `</h6>
+                           <img src="` + compras.src + `" class="img-thumbnail">    
+                        </div>
+                                   
+                        <div class="col-2 carri"><b>` + compras.unitCost + ` </b> </div>
+                        <div class="col-2 carri"><b>` + compras.currency + ` </b> </div>
+                        <div class="col-2 carri"><b>` + compras.count + ` </b> </div>
+                        <div id="subT" class="col-2 carri"><b>` + + ` </b> </div>
           </div>
-          </a>
+         
           `
         document.getElementById("mostrarcarrito").innerHTML = htmlContentToAppend;
     };
@@ -37,19 +37,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
             compras = resultObj.data;
             articulos = compras.articles;
 
-          /*  let cartName = document.getElementById("cartname");
-            let cartUnitCost = document.getElementById("cartunitcost");
-            let cartCount = document.getElementById("cartcount");
-            let cartCurr = document.getElementById("cartcurr");
-           let cartSub = document.getElementById("cartsub");
+                showCart(articulos);
 
-            cartName.innerHTML = compras.articles.name;
-            cartUnitCost.innerHTML = compras.articles.unitCost;
-            cartCount.innerHTML = compras.count;
-            cartCurr.innerHTML = compras.currency;*/
-
-            showCart(articulos);
-           
         }
     });
 });
+
+function subTotal() {
+    
+    let subtotal = compras.unitCost * compras.count
+
+    
+}
