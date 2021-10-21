@@ -20,19 +20,16 @@ function showCart(array) {
                         <div class="col-2 carri"><b>` + compras.currency + ` </b> </div>
                         <div class="col-2 carri"><b>` + compras.unitCost + ` </b> </div>
                         <div class="col-2 carri"><b>
-                        <input type="number" value="` + compras.count + `" min="0" id='cant' onchange='sumar()' size="5"> </b> </div>
+                        <input type="number" value="` + compras.count + `" min="0" id='cant' onchange="multiplicar();" size="5"> </b> </div>
                         
-                        <div id="subT" class="col-2 carri"><b>` + (compras.unitCost * cantP) + ` </b> </div>
-                        
+                        <div id="subT" "class="col-2 carri"><b>` + (compras.unitCost * compras.count) + ` </b> </div>
           </div>
-       
           `
         document.getElementById("mostrarcarrito").innerHTML = htmlContentToAppend;
     };
 }
 
 //SUBTOTAL = MULTIPLICAR LAS VARIABLES DENTRO DEL MISMO FOR! HERMOSO!
-
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -45,15 +42,17 @@ document.addEventListener("DOMContentLoaded", function (e) {
             articulos = compras.articles;
 
                 showCart(articulos);
-
         }
     });
 });
 
+function multiplicar() {
 
+    let cantprod = parseInt(articulos.count).value;
+    let precprod = parseInt(articulos.unitCost).value;
 
-function sumar() {
+    let resultado = (cantprod * precprod);
 
-    let cantprod = document.getElementById("cant").value;
-    let precprod = document.getElementById("")
-}
+    document.getElementById("subT").innerHTML = resultado;
+    
+    }
