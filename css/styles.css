@@ -295,3 +295,7 @@ padding: 0px;
     background-color: black;
     color: aqua;
   }
+
+  .form-group input {
+        justify-content: end;
+  }
