@@ -7,7 +7,7 @@ function showCart(array) {
     for (let i = 0; i < array.length; i++) {
 
         let compras = array[i];
-        cantP = compras.count;
+        //cantP = compras.count;
         htmlContentToAppend += `
         <hr>
         <div class="row">
@@ -17,12 +17,12 @@ function showCart(array) {
                             <img src="` + compras.src + `" class="img-thumbnail imgcarrito" id="img-carrito">
                         </div>
                                    
-                        <div class="col-2 carri"><b>` + compras.currency + ` </b> </div>
+                        <div class="col-2 carri" id="moneda` + i + `"><b>` + compras.currency + ` </b> </div>
                         <div class="col-2 carri"><b>` + compras.unitCost + ` </b> </div>
                         <div class="col-2 carri"><b>
-                        <input type="number" value="` + compras.count + `" min="0" id='cant' onchange="multiplicar();" size="5"> </b> </div>
+                        <input type="number" value="` + compras.count + `" min="0" id='cant` + i + `' onchange="multiplicar(` + i + `);" size="5"> </b> </div>
                         
-                        <div id="subT" "class="col-2 carri"><b>` + (compras.unitCost * compras.count) + ` </b> </div>
+                        <div id="subT` + i + `" "class="col-2 carri"><b>` + (compras.unitCost * compras.count) + ` </b> </div>
           </div>
           `
         document.getElementById("mostrarcarrito").innerHTML = htmlContentToAppend;
@@ -41,18 +41,45 @@ document.addEventListener("DOMContentLoaded", function (e) {
             compras = resultObj.data;
             articulos = compras.articles;
 
-                showCart(articulos);
+            showCart(articulos);
+            subTotales(articulos);
         }
     });
 });
 
-function multiplicar() {
+function multiplicar(num) {
+    
+    let subtI = "subT" + num;
+    let cantI = "cant" + num;
+    
 
-    let cantprod = parseInt(articulos.count).value;
-    let precprod = parseInt(articulos.unitCost).value;
+    let cantprod = parseInt(document.getElementById(cantI).value); //esto es variable 
+    let precprod = parseInt(articulos[num].unitCost); //esto es fijo
+    let monprod = articulos[num].currency
 
     let resultado = (cantprod * precprod);
-
-    document.getElementById("subT").innerHTML = resultado;
-    
+    if(monprod === "USD"){
+        resultado = (cantprod * precprod * 40); 
     }
+
+    document.getElementById(subtI).innerHTML = resultado + ` $`;
+
+}
+
+
+function subTotales(num) {
+ 
+let subtI = "subT" + num;
+
+let moneda = articulos.currency;
+let subtotales = parseInt(document.getElementById(subtI).value);
+
+
+  let sumatoria = subtotales;
+   document.getElementById("mostrarsubtotal").innerHTML = sumatoria;
+
+}
+
+/*hacer un array
+sumar cada i
+si curr = USD entonces prec*40*/
