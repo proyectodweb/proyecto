@@ -13,22 +13,29 @@ function showProductList(array){
         htmlContentToAppend += `
        
         <a href="product-info.html" class="list-group-item list-group-item-action">
-      <div class="row">
+      
         
-                <div class="col-3">
-                         <img src="` + product.imgSrc + `"alt="` + product.description + `" class="img-thumbnail">    
-                 </div>
-                 <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1"><b>` + product.name +` </b> </h4>
-                        <small class="text-muted">` + product.soldCount +` Vendidos</small>
-                    </div>
-                    <p class="mb-1">` + product.description +` </p>
-                         <div class="w-100"><b>` + product.currency + "  " + product.cost +` </b>
-                         </div>
+            <div class="col-12">
+                <h4 class="mb-1"><b>` + product.name +` </b> </h4> 
+            </div>
+             <div class="col-6">
+                         <img src="` + product.imgSrc + `"alt="" class="img-thumbnail">   
+            </div>
+
+            <div class="col-6">
+                 <small class="text-muted" >` + product.soldCount +` Vendidos</small>   
+            </div>
+                
+                 
+            <div class="col-10">
+                 <p class="mb-1">` + product.description +` </p>
+            </div>
+                    
+            <div class="col-12"><b>` + product.currency + "  " + product.cost +` </b>
+             </div>
                   </div>
             </div>
-        </div>
+       
         </a>
         `
     document.getElementById("cat-list-container").innerHTML= htmlContentToAppend;

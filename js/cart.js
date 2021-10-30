@@ -1,4 +1,5 @@
 var articulos = [];
+var total = 0;
 
 
 function showCart(array) {
@@ -25,8 +26,11 @@ function showCart(array) {
                         <div id="subT` + i + `" "class="col-2 carri"><b>` + (compras.unitCost * compras.count) + ` </b> </div>
           </div>
           `
+        
         document.getElementById("mostrarcarrito").innerHTML = htmlContentToAppend;
+        total += parseFloat(array[i].unitCost * document.getElementById("cant" + i).value);
     };
+    document.getElementById("mostrarsubtotal").innerHTML = total;
 }
 
 //SUBTOTAL = MULTIPLICAR LAS VARIABLES DENTRO DEL MISMO FOR! HERMOSO!
@@ -42,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             articulos = compras.articles;
 
             showCart(articulos);
-            subTotales(articulos);
+            //subTotales(articulos);
         }
     });
 });
@@ -63,11 +67,16 @@ function multiplicar(num) {
     }
 
     document.getElementById(subtI).innerHTML = resultado + ` $`;
-
+    let auxtotal = 0;
+ for(let j=0; j < articulos.length; j++) {
+     
+     auxtotal += parseFloat(articulos[j].unitCost * document.getElementById("cant" + j).value);
+ } 
+ document.getElementById("mostrarsubtotal").innerHTML = auxtotal;
 }
 
 
-function subTotales(num) {
+/*function subTotales(num) {
  
 let subtI = "subT" + num;
 
@@ -78,7 +87,7 @@ let subtotales = parseInt(document.getElementById(subtI).value);
   let sumatoria = subtotales;
    document.getElementById("mostrarsubtotal").innerHTML = sumatoria;
 
-}
+}*/
 
 /*hacer un array
 sumar cada i

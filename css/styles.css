@@ -319,3 +319,72 @@ padding: 0px;
       color: chartreuse;
       background-color: black;
   }
+  
+
+  @media only screen and (max-width: 768px) {
+
+   header {
+    width: 100%;
+    height: 10vh;
+}
+nav {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: burlywood;
+}
+ul {
+    max-height: 350px;
+}
+.bar-btn {
+    font-size: 25px;
+    color: whitesmoke;
+    margin: 10px;
+    cursor: pointer;
+    padding: 15px;
+}
+.nav-menu {
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 100px;
+    background: rgba(196, 143, 143, 0.95);
+    text-align: center;
+    transition: all .5s;
+}
+
+.nav-menu li {
+display: none;
+line-height: 10px;
+margin: 30px 0;
+transition: all .5s;
+}
+
+.nav-menu li a {
+    color: rgb(20, 202, 78);
+    font-size: 16px;
+}
+
+.nav-menu li a.active, .nav-menu li a:hover {
+    color: red;
+    transition: .3s;
+}
+#check {
+    display:none;
+}
+
+#check:checked ~ .nav-menu {
+    height: 100vh;
+}
+
+#check:checked ~ .nav-menu li {
+ display: block;
+}
+  }
+
+  .container {
+    display: inline-flexbox;
+    flex-wrap: wrap;
+  }
