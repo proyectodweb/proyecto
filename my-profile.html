@@ -21,8 +21,6 @@
       -ms-user-select: none;
       user-select: none;
     }
-
-    
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -30,131 +28,137 @@
 </head>
 
 <body>
-    
+
   <header>
     <nav class="site-header sticky-top py-1 bg-dark d-flex">
-        <input type="checkbox" name="" id="check">
-        <label for="check" class="bar-btn">
-            ►
-        </label>
-        <ul class="nav-menu">
-            <li><a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a></li>
-            <li><a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a></li>
-            <li><a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a></li>
-            <li><a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a></li>
-            <li><a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-            </li>
-            <li><a href="#">bienidees</a></li>
+      <input type="checkbox" name="" id="check">
+      <label for="check" class="bar-btn">
+        ►
+      </label>
+      <ul class="nav-menu">
+        <li><a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a></li>
+        <li><a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a></li>
+        <li><a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a></li>
+        <li><a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a></li>
+        <li><a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        </li>
+        <li><a href="#">bienidees</a></li>
 
-            <li>
-                <div class="dropdown">
-                    <button class="dropbtn" data-toggle="dropdown" id="boton">
-                        <a class="py-2 d-none d-md-inline-block" id="nombre" style="color: chartreuse;"></a> <span
-                            class="sr-only">Toggle Dropdown</span> </button>
-                    <div class="dropdown-content">
-                        <a href="#">Mi Perfil</a>
-                        <a href="#" onclick="desconectar()">Desconectar</a>
-                        <a href="#">Preguntas frecuentes</a>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <li>
+          <div class="dropdown">
+            <button class="dropbtn" data-toggle="dropdown" id="boton">
+              <a class="py-2 d-none d-md-inline-block" id="nombre" style="color: chartreuse;"></a> <span
+                class="sr-only">Toggle Dropdown</span> </button>
+            <div class="dropdown-content">
+              <a href="#">Mi Perfil</a>
+              <a href="#" onclick="desconectar()">Desconectar</a>
+              <a href="#">Preguntas frecuentes</a>
+            </div>
+          </div>
+        </li>
+      </ul>
 
     </nav>
     </head>
 
 
+    <div class="container p-5">
+      <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
 
-
-  <script>
-    let usuario = JSON.parse(localStorage.getItem("usuario"));
-    document.getElementById('nombre').innerHTML = "Bienvenid@  " + usuario.nombre + "!!";
-  </script>
-
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-     
-      <p class="mb-0">Por favor completa el siguiente formulario.</p>
-    </div>
-  </div>
-
-  <div class="container formulario">
-    
-    <form action="">
-      
-      <div class="row">
-        <div class="col"></div>
-        <div class="col-6">
-
-          <div class="form-group">
-            <label for="nombres">Nombre: </label> <input type="text" name="nombres" id="fname" class="form-control" value=""><br>
-          </div>
-          <div class="form-group">
-            <label for="apellidos">Apellido: </label> <input type="text" name="apellidos" id="lname" class="form-control" value="" placeholder="Marquéz"><br>
-          </div>
-          <div class="form-group">
-            <label for="edades">Edad: </label> <input type="number" name="edades" id="age" min="18" max="100" class="form-control" value="" placeholder="25"><br>
-          </div>
-          <div class="form-group">
-            <label for="emails">Email: </label> <input type="email" id="email" class="form-control" value="" placeholder="jmarquez@gmail.com"><br>
-          </div>
-          <div class="form-group">
-            <label for="cels">Cel: </label> <input type="tel" id="cel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxlength="9" class="form-control" value="" placeholder="099 123 123"><br>
-            <small>Format: 123 456 789</small><br>
-          </div>
-          <div class="form-group">
-            <label for="myfile">Subir archivo: </label><br>
-            
-            <input type="file" id="perfilimg" name="myfile"><br><br>
-          </div>
-
-          <div class="form-group">
-            <label for="" class="form-check-label">
-              <input type="checkbox"> Recordarme
-            </label>
-          </div>
-          <input type="submit" name="" id="" value="submit" onclick="guardarPerfil();">
-          
-        </div>
-        <div class="col"></div>
+        <p class="mb-0">Por favor completa el siguiente formulario.</p>
       </div>
-                
-    </form>
-    
-  </div>
-  <button type="button" onclick="modificarPerfil();">Modificar</button>
-  </div>
-  </div>
- 
-
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p></p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
 
+    <div class="container formulario p-5" id="perfilform">
+
+      <form action="">
+
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-6">
+
+            <div class="form-group">
+              <label for="nombres">Nombre: </label> <input type="text" name="nombres" id="fname" class="form-control"
+                value="" placeholder="Juana"><br>
+            </div>
+            <div class="form-group">
+              <label for="apellidos">Apellido: </label> <input type="text" name="apellidos" id="lname"
+                class="form-control" value="" placeholder="Marquéz"><br>
+            </div>
+            <div class="form-group">
+              <label for="edades">Edad: </label> <input type="number" name="edades" id="age" min="18" max="100"
+                class="form-control" value="" placeholder="25"><br>
+            </div>
+            <div class="form-group">
+              <label for="emails">Email: </label> <input type="email" id="email" class="form-control" value=""
+                placeholder="jmarquez@gmail.com"><br>
+            </div>
+            <div class="form-group">
+              <label for="cels">Cel: </label> <input type="tel" id="cel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+                maxlength="9" class="form-control" value="" placeholder="099 123 123"><br>
+              <small>Format: 123 456 789</small><br>
+            </div>
 
 
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+            <div class="form-group">
+              <label for="myfile">Subir archivo: </label><br>
+
+              <input type="file" id="myFileInput" onchange="previewFile()"><br><br>
+
+              <img id="foto" src="" height="150px" alt="">
+
+            </div>
+
+
+
+
+            <div class="form-group">
+              <label for="" class="form-check-label">
+                <input type="checkbox"> Recordarme
+              </label>
+            </div>
+            <input type="submit" name="" id="" value="submit" onclick="guardarPerfil();">
+
+          </div>
+          <div id="contenido"></div>
+          <div class="col"></div>
+        </div>
+
+      </form>
+
     </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/my-profile.js"></script>
+    <button type="button" onclick="modificarPerfil();">Modificar</button>
+    </div>
+    </div>
+
+    <footer class="text-muted bg-light">
+      <div class="container">
+        <p></p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+
+
+
+    </footer>
+    <div class="alert fade alert-success" role="alert" id="alertResult">
+      <span id="resultSpan"></span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/my-profile.js"></script>
 </body>
 
 </html>
