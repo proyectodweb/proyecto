@@ -21,8 +21,7 @@ if (file) {
 }  
 
 
-var perfiles = [];
-var perfil = {};
+let perfiles = [];
 
   function guardarPerfil() { 
       
@@ -31,29 +30,23 @@ var perfil = {};
     
     perfil.nombre = document.getElementById("fname").value;
     perfil.apellido = document.getElementById("lname").value;
+    perfil.edad = document.getElementById("age").value;
     perfil.email = document.getElementById("email").value;
     perfil.cel = document.getElementById("cel").value;
-    perfil.edad = document.getElementById("age").value;
     perfil.imagen = preview.src
     
 
     localStorage.setItem("users", JSON.stringify(perfil));
-    alert("perfil guardado")
+    alert("gracias por completar tu perfil!")
     
-//vaciar campos
-//    document.getElementById("fname").value = "";
-//    document.getElementById("lname").value = "";
-//    document.getElementById("email").value = "";
- //   document.getElementById("cel").value = "";
- //   document.getElementById("age").value = "";
     }
 
-    perfil.push(perfiles)
+   perfil.push(perfiles)
 
 
     document.addEventListener("DOMContentLoaded", function (e) {
       let preview = document.getElementById("foto");
-      let perfil = JSON.parse(localStorage.getItem("usuario"));
+      let perfil = JSON.parse(localStorage.getItem("user"));//usuario?
 
       if (perfil != null){
 
@@ -65,23 +58,12 @@ var perfil = {};
       }
     });
 
+    //Modificar perfil//
+    
     /*function modificarPerfil() {
       //  alert("modifica tus datos y guardalos nuevamente :)");
 
-        let perfil = JSON.parse(localStorage.getItem("perfil"));
+        let perfil = JSON.parse(localStorage.getItem("users"));
+        document.getElementById("lname").innerHTML = perfil.nombre;
 
-        perfil.nombre += document.getElementById("fname").innerHTML;
-    }
-    
-    document.querySelector("#myFileInput").addEventListener("change", function () {
-  const reader = new FileReader();
-
-  reader.addEventListener("load", () => {
-    localStorage.setItem("recent-image", reader.result);
-  })
-
-  reader.readAsDataURL(this.files[0]);
-}
-)
-
-*/
+}*/
