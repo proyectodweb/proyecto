@@ -120,7 +120,7 @@
             <input type="submit" name="" id="" value="submit" onclick="guardarPerfil();">
 
           </div>
-          <div id="contenido"></div>
+          <div id="contenidoSSSS"></div>
           <div class="col"></div>
         </div>
 
@@ -130,6 +130,16 @@
     <button type="button" onclick="modificarPerfil();">Modificar</button>
     </div>
     </div>
+
+      <div>
+        <p>Nombre: <span id="nombreguardado"></span></p>
+        <p>Apellido: <span id="apellidoguardado"></span></p>
+        <p>Edad: <span id="edadguardado"></span></p>
+        <p>Email: <span id="emailguardado"></span></p>
+        <p>Cel: <span id="celguardado"></span></p>
+        <p>Imagen: <span id="imagenguardado"></span></p>
+      </div>
+
 
     <footer class="text-muted bg-light">
       <div class="container">
@@ -159,6 +169,17 @@
     <script src="js/dropzone.js"></script>
     <script src="js/init.js"></script>
     <script src="js/my-profile.js"></script>
+
+    <script>
+      let perfil = JSON.parse(localStorage.getItem("users"))
+      document.getElementById("nombreguardado").innerHTML = perfil.nombre;
+      document.getElementById("apellidoguardado").innerHTML = perfil.apellido;
+      document.getElementById("edadguardado").innerHTML = perfil.edad;
+      document.getElementById("emailguardado").innerHTML = perfil.email;
+      document.getElementById("celguardado").innerHTML = perfil.cel;
+      document.getElementById("imagenguardado").innerHTML = perfil.imagen;
+      
+      </script>
 </body>
 
 </html>
