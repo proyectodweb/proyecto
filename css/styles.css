@@ -388,3 +388,9 @@ transition: all .5s;
     display: inline-flexbox;
     flex-wrap: wrap;
   }
+  .perfilimg {
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }

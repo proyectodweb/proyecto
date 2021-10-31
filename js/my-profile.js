@@ -6,29 +6,35 @@
 //});
 
 let perfiles = [];
-
+let perfil = {};
     function guardarPerfil() { 
-       let dato = document.getElementById("nombre");
-    let usuario = {};
+      // let dato = document.getElementById("nombre");
+    let perfil = {};
 
-    usuario.nombre = document.getElementById("fname").value;
-    usuario.apellido = document.getElementById("lname").value;
-    usuario.email = document.getElementById("email").value;
-    usuario.cel = document.getElementById("cel").value;
-    usuario.edad = document.getElementById("age").value;
-
+    perfil.nombre = document.getElementById("fname").value;
+    perfil.apellido = document.getElementById("lname").value;
+    perfil.email = document.getElementById("email").value;
+    perfil.cel = document.getElementById("cel").value;
+    perfil.edad = document.getElementById("age").value;
+       // perfil.imagen = document.getElementById("perfiimg")
     
 
-    localStorage.setItem("perfil", JSON.stringify(usuario));
+    localStorage.setItem("perfiles", JSON.stringify(perfil));
     
 //vaciar campos
-    document.getElementById("fname").value = "";
-    document.getElementById("lname").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("cel").value = "";
-    document.getElementById("age").value = "";
+//    document.getElementById("fname").value = "";
+//    document.getElementById("lname").value = "";
+//    document.getElementById("email").value = "";
+ //   document.getElementById("cel").value = "";
+ //   document.getElementById("age").value = "";
     }
 
-    usuario.push(perfiles);
+    perfil.push(perfiles)
 
-    
+    /*function modificarPerfil() {
+        alert("modifica tus datos y guardalos nuevamente :)");
+
+        //let perfil = JSON.parse(localStorage.getItem("perfiles"));
+
+        document.getElementById("fname").innerHTML = perfil.nombre;
+    }*/
