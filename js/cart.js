@@ -28,16 +28,17 @@ function showCart(array) {
           `
         
         document.getElementById("mostrarcarrito").innerHTML = htmlContentToAppend;
-        total += parseFloat(array[i].unitCost * document.getElementById("cant" + i).value);
+
+        if (articulos[i].currency === "USD"){
+        total += parseFloat(array[i].unitCost * document.getElementById("cant" + i).value*40);
+    }else{        
+            total += parseFloat(array[i].unitCost * document.getElementById("cant" + i).value);}
     };
     document.getElementById("mostrarsubtotal").innerHTML = total;
 }
 
 //SUBTOTAL = MULTIPLICAR LAS VARIABLES DENTRO DEL MISMO FOR! HERMOSO!
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
 
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(CART_INFO_URL).then(function (resultObj) {
@@ -46,10 +47,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
             articulos = compras.articles;
 
             showCart(articulos);
-            //subTotales(articulos);
+           
         }
-    });
+    }); 
 });
+
+
+
+var resultado = 0;
 
 function multiplicar(num) {
     
@@ -59,18 +64,22 @@ function multiplicar(num) {
 
     let cantprod = parseInt(document.getElementById(cantI).value); //esto es variable 
     let precprod = parseInt(articulos[num].unitCost); //esto es fijo
-    let monprod = articulos[num].currency
+    let monprod = articulos[num].currency;
 
     let resultado = (cantprod * precprod);
     if(monprod === "USD"){
-        resultado = (cantprod * precprod * 40); 
+      resultado = (cantprod * precprod * 40); 
     }
 
     document.getElementById(subtI).innerHTML = resultado + ` $`;
     let auxtotal = 0;
- for(let j=0; j < articulos.length; j++) {
+      for(let j=0; j < articulos.length; j++) {
      
-     auxtotal += parseFloat(articulos[j].unitCost * document.getElementById("cant" + j).value);
+        if (articulos[j].currency === "USD"){
+        auxtotal += parseFloat(articulos[j].unitCost * document.getElementById("cant" + j).value * 40);
+    }else{
+             auxtotal += parseFloat(articulos[j].unitCost * document.getElementById("cant" + j).value);
+     }
  } 
  document.getElementById("mostrarsubtotal").innerHTML = auxtotal;
 }
@@ -91,4 +100,5 @@ let subtotales = parseInt(document.getElementById(subtI).value);
 
 /*hacer un array
 sumar cada i
-si curr = USD entonces prec*40*/
+si curr = USD entonces prec*40 
+*/
