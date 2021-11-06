@@ -25,7 +25,7 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      
+
       <div class="dropdown">
         <button class="dropbtn" data-toggle="dropdown" id="boton">
           <a class="py-2 d-none d-md-inline-block" id="nombre" style="color: chartreuse;"></a> <span
@@ -37,22 +37,24 @@
         </div>
       </div>
     </div>
-    </nav>
+  </nav>
 
-    <script>
-      let usuario = JSON.parse(localStorage.getItem("usuario"));
-      document.getElementById('nombre').innerHTML = "Bienvenid@  " + usuario.nombre + "!!";
-    </script>
-  
-    <div class="text-center p-4 lupa">
+  <script>
+    let usuario = JSON.parse(localStorage.getItem("usuario"));
+    document.getElementById('nombre').innerHTML = "Bienvenid@  " + usuario.nombre + "!!";
+  </script>
+
+  <div class="text-center p-4 lupa">
     <h2>Productos</h2>
     <p class="lead">Verás aquí todos los productos del sitio.</p>
-  <br>
-    <input type="text" placeholder="Escribe aqui lo que buscas!" id="buscador" style="border: solid #8ccbf1; padding: 5px; background-color: #fbf4b3 ;">
-    <button  type="button" onclick="buscar()" style="background-color: #cbdc9b; border-radius: 5px; border: solid #8ccbf1; padding: 4px"> Buscar </button>
+    <br>
+    <input type="text" placeholder="Escribe aqui lo que buscas!" id="buscador"
+      style="border: solid #8ccbf1; padding: 5px; background-color: #fbf4b3 ;">
+    <button type="button" onclick="buscar()"
+      style="background-color: #cbdc9b; border-radius: 5px; border: solid #8ccbf1; padding: 4px"> Buscar </button>
     <br>
   </div>
-<br>
+  <br>
 
   <div class="container">
     <div class="row">
@@ -70,46 +72,49 @@
         </div>
       </div>
     </div>
-</div>
+  </div>
 
-<div class="container">
-   
-          <div class="row">
-            <div class="col-2 text-right">
-             <p style="text-align: right; padding-top: 20px;">Precio</p>
-            </div>
-            <div class="col-10 text-right">
-              <div class="btn-group" role="group" style="padding-top: 20px;">
-                <button class="btn btn-light btn-block" id="rangeFilterCount" onclick="filtrar();">Filtrar</button>
-                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
-              </div>
-            </div>
-          </div>
+  <div class="container">
 
-          <div class="row">
-            <div class="col"></div>
-            <div class="col-8">
-            Min<input class="form-control" type="number" value="0" id="minimo" size="7">
-            Max <input class="form-control" type="number" value="50000" id="maximo" size="7"><br><br>
-            
-          </div>
-          
-
-          
-
+    <div class="row">
+      <div class="col-2 text-right">
+        <p style="text-align: right; padding-top: 20px;">Precio</p>
+      </div>
+      <div class="col-10 text-right">
+        <div class="btn-group" role="group" style="padding-top: 20px;">
+          <button class="btn btn-light btn-block" id="rangeFilterCount" onclick="filtrar();">Filtrar</button>
+          <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
         </div>
-        </div>
-    
+      </div>
+    </div>
 
-
-<div class="container">
     <div class="row">
       <div class="col"></div>
-      <div class="col-10" id="cat-list-container">
+      <div class="col-8">
+        Min<input class="form-control" type="number" value="0" id="minimo" size="7">
+        Max <input class="form-control" type="number" value="50000" id="maximo" size="7"><br><br>
+
       </div>
-      <div class="col"></div>
+
+
+
+
     </div>
   </div>
+
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12" id="cat-list-container">
+      </div>
+
+    </div>
+
+  </div>
+
+
   <br>
 
   <footer class="text-muted">
@@ -122,7 +127,7 @@
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
-     
+
     </div>
   </div>
   <script src="js/jquery-3.4.1.min.js"></script>

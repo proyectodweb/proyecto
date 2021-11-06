@@ -33,7 +33,7 @@ let perfiles = [];
     perfil.edad = document.getElementById("age").value;
     perfil.email = document.getElementById("email").value;
     perfil.cel = document.getElementById("cel").value;
-    perfil.imagen = preview.src
+    perfil.imagen = preview.src;
     
 
     localStorage.setItem("users", JSON.stringify(perfil));

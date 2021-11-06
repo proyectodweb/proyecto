@@ -11,32 +11,29 @@ function showProductList(array){
 
         let product = array[i];
         htmlContentToAppend += `
-       
-        <a href="product-info.html" class="list-group-item list-group-item-action">
-      
         
-            <div class="col-12">
-                <h4 class="mb-1"><b>` + product.name +` </b> </h4> 
-            </div>
-             <div class="col-6">
-                         <img src="` + product.imgSrc + `"alt="" class="img-thumbnail">   
+        <a href="product-info.html" class="list-group-item-action">
+         
+        <div class="card shadow-sm p-3">
+            <div class="col-6"> 
+                <h4 class="mb-1"><b>` + product.name +` </b> </h4>
+                 <img src="` + product.imgSrc + `"alt="" class="img-thumbnail">   
             </div>
 
             <div class="col-6">
                  <small class="text-muted" >` + product.soldCount +` Vendidos</small>   
             </div>
                 
-                 
             <div class="col-10">
                  <p class="mb-1">` + product.description +` </p>
             </div>
                     
             <div class="col-12"><b>` + product.currency + "  " + product.cost +` </b>
-             </div>
-                  </div>
             </div>
-       
-        </a>
+              
+        </div> 
+         </a>
+         <br>
         `
     document.getElementById("cat-list-container").innerHTML= htmlContentToAppend;
     };
