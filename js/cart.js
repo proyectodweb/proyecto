@@ -1,6 +1,9 @@
 var articulos = [];
 var total = 0;
-
+var resultado = 0;
+var auxtotal = 0;
+var envio = 0;
+costoTotal = 0;
 
 function showCart(array) {
     let htmlContentToAppend = "";
@@ -26,15 +29,36 @@ function showCart(array) {
                         <div id="subT` + i + `" "class="col-2 carri"><b>` + (compras.unitCost * compras.count) + ` </b> </div>
           </div>
           `
-        
+          
+        auxtotal += (compras.unitCost * compras.count);
         document.getElementById("mostrarcarrito").innerHTML = htmlContentToAppend;
+        
+
 
         if (articulos[i].currency === "USD"){
         total += parseFloat(array[i].unitCost * document.getElementById("cant" + i).value*40);
     }else{        
             total += parseFloat(array[i].unitCost * document.getElementById("cant" + i).value);}
+    
+            costoTotal = auxtotal + envio;
     };
-    document.getElementById("mostrarsubtotal").innerHTML = total;
+
+    document.getElementById("mostrarsubtotal").innerHTML = auxtotal;
+
+ if(document.getElementById("envioPremium").checked){
+     envio = auxtotal * 0.15
+ }
+ if(document.getElementById("envioExpress").checked){
+     envio = auxtotal * 0.07
+ }
+ if(document.getElementById('envioStandard').checked){
+     envio = auxtotal * 0.05
+ }
+ document.getElementById("costoenvio").innerHTML = (envio).toFixed(2);
+
+ 
+ 
+    document.getElementById("costodecompra").innerHTML = costoTotal;
 }
 
 //SUBTOTAL = MULTIPLICAR LAS VARIABLES DENTRO DEL MISMO FOR! HERMOSO!
@@ -47,20 +71,31 @@ document.addEventListener("DOMContentLoaded", function (e) {
             articulos = compras.articles;
 
             showCart(articulos);
-           
+         
         }
     }); 
+
+    document.getElementById("envioStandard").addEventListener("change",()=> {
+        showCart(articulos);
+    })
+
+    document.getElementById("envioPremium").addEventListener("change",()=> {
+        showCart(articulos);
+    })
+    document.getElementById("envioExpress").addEventListener("change",()=> {
+        showCart(articulos);
+    })
 });
 
 
 
-var resultado = 0;
+
 
 function multiplicar(num) {
     
     let subtI = "subT" + num;
     let cantI = "cant" + num;
-    
+   
 
     let cantprod = parseInt(document.getElementById(cantI).value); //esto es variable 
     let precprod = parseInt(articulos[num].unitCost); //esto es fijo
@@ -70,35 +105,61 @@ function multiplicar(num) {
     if(monprod === "USD"){
       resultado = (cantprod * precprod * 40); 
     }
-
+ 
     document.getElementById(subtI).innerHTML = resultado + ` $`;
     let auxtotal = 0;
       for(let j=0; j < articulos.length; j++) {
      
         if (articulos[j].currency === "USD"){
+            
         auxtotal += parseFloat(articulos[j].unitCost * document.getElementById("cant" + j).value * 40);
     }else{
              auxtotal += parseFloat(articulos[j].unitCost * document.getElementById("cant" + j).value);
-     }
+            }
  } 
  document.getElementById("mostrarsubtotal").innerHTML = auxtotal;
+
+ if(document.getElementById("envioPremium").checked){
+     envio = auxtotal * 0.15
+ }
+ if(document.getElementById("envioExpress").checked){
+     envio = auxtotal * 0.07
+ }
+ if(document.getElementById('envioStandard').checked){
+     envio = auxtotal * 0.05
+ }
+ document.getElementById("costoenvio").innerHTML = (envio).toFixed(2);
+
+ total += auxtotal + envio;
 }
+//var costo = multiplicar(num);
+
+/*let envioPremium = 0;
+let importe = 0;//ACA DEBERIA ESTAAR EL VALOR DE AUXTOTAL
+let premium = 0;
+
+function costoPremium() {
+    
+    let premium = 0.15;
+
+    let envioPremium = parseInt(importe * premium);
+
+    alert('Hola! el costo de tu envio sera de + "envioPremium"')
+     envioPremium;
+
+}
+/*
 
 
-/*function subTotales(num) {
- 
-let subtI = "subT" + num;
+function enviar() {
+    let envio = 0;
+    let radios = document.getElementsByName("envio");// me devuelve coleccion, el array de los radio
 
-let moneda = articulos.currency;
-let subtotales = parseInt(document.getElementById(subtI).value);
-
-
-  let sumatoria = subtotales;
-   document.getElementById("mostrarsubtotal").innerHTML = sumatoria;
-
+    for(let i=0; i < radios.length; i++){
+        if (radios[i].checked){
+            envio += parseFloat(radios[i].value)/100 * auxtotal;
+            document.getElementById("costoenvio").innerHTML = (envio).toFixed(2);
+        }
+    }
 }*/
 
-/*hacer un array
-sumar cada i
-si curr = USD entonces prec*40 
-*/

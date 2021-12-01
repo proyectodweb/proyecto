@@ -87,10 +87,10 @@
     <br><br>
 
     <div class="row subtotals">
-      <div class="col-2">
-        <button type="button" onclick="subTotales();" id="botonsubtotal">Subtotal $</button>
+      <div class="col-4">
+        <h6>Subtotal $  <span id="mostrarsubtotal"></span></h6>
       </div>
-      <div class="col-2" id="mostrarsubtotal" style="color: black;">
+      <div class="col-2"  style="color: black;">
         <h6></h6>
       </div>
     </div>
@@ -99,8 +99,9 @@
 
     <div class="row subtotals">
       <div class="col-6">
-        <h6>Costo de Envio</h6>
+        <h6>Costo de Envio $  <span id="costoenvio"></span></h6>
       </div>
+      
     </div>
 <div class="container">
     <div class="row">
@@ -113,14 +114,22 @@
 
     <div class="row">
       <div class="col-6">
-        <select name="opciones" id="" required>
-          <option value="0" disabled>Elige una opcion</option>
-          <optgroup>
-            <option value="0,15" onclick="javascript:alert('Tu costo de envio será de ..')">Premium</option>
-            <option value="0,07" onclick="javascript:alert('Tu costo de envio será de ..')">Express</option>
-            <option value="0,05" onclick="javascript:alert('Tu costo de envio será de ..')">Normal</option>
-          </optgroup>
-        </select>
+
+        <label for="envioPremium">
+          <input id="envioPremium" type="radio" name="envio" value="15">
+          Premium: <b>2 a 5 días</b>+ 15%
+        </label>
+        <br>
+        <label for="envioExpress">
+          <input id="envioExpress" type="radio" name="envio" value="7">
+          Express: <b>5 a 8 días</b>+7%
+        </label>
+        <br>
+        <label for="envioStandard">
+          <input id="envioStandard" type="radio" name="envio" value="5">
+          Standar: <b>12 a 15 días</b>+5%
+        </label>
+                  
       </div>
       <div class="col-6">
         <span id="mostraropcion"></span>
@@ -129,9 +138,104 @@
     <br>
 
     <div class="row subtotals">
-<div class="col-3"><h6>Total</h6></div>
-<div class="col-4"> <span id="total" style="background-color: rgb(104, 214, 141);"></span></div>
+      <div class="col-6">
+        <h6>Total de la Compra $  <span id="costodecompra"></span></h6>
+      </div>
       
+    </div> 
+<div>
+  <div class="row subtotals">
+    <div class="col-6">
+      <h6>Detalles de Envio <span id=""></span></h6>
+    </div>
+  </div>
+ <!-- <form action="http://localhost:3000/data" method="post"> -->
+    <form action="">
+
+    
+      <br>
+<label for="direccion"><input type="text" value="" name="direccion" placeholder="Direccion" required></label>
+<br>
+<label for="numero"><input type="text" name="numero" placeholder="6454" required></label>
+<br>
+<p>**Dejanos saber tu horario de preferencia**</p><br>
+<div class="row">
+  <label for="horario"><input type="text" value="" name="horario" placeholder="Entre las 10 y las 13hs" required></label>
+<div class="col-1"></div>
+<button type="submit" class="btn btn-primary">Enviar</button>
+</div>
+</form>
+</div>
+<br><br>
+<div class="col-3">
+  <button type="button" data-toggle="modal" data-target="#myModal">Forma de Pago</button>
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h4>Selecciona tu metodo de pago</h4>
+        </div>
+        <div class="modal-body">
+
+          <div>
+            <div class="container">
+              <div class="row">
+                <h4>Tipo de tarjeta</h4>
+
+                <div class="col-6">
+                  <select name="opciones" id="" required>
+                    <option value="0" disabled>Elige una opcion</option>
+                    <optgroup>
+                      <option value="" id="cre">Tarjeta de Credito</option>
+                      <option value="" id="deb">Tarjeta Debito</option>
+                    </optgroup>
+                  </select>
+                </div>
+
+              </div>
+              <div class="row">
+                <h6> Titular de la tarjeta</h6><div class="col-2"></div> <input type="text">
+              </div>
+              <br>
+              <div class="row">
+                <h6>Numero de tarjeta</h6><div class="col-2"></div><input type="number">
+              </div>
+              <br>
+              <div class="row">
+                <h6>Caducidad</h6><div class="col-1"></div><input type="date" min="2021-11-11">
+              </div>
+              <br>
+              <div class="row">
+                <h6>Codigo CVV</h6><div class="col-1"></div><input type="password" max="3">
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar datos</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="col-4"> <span id="" style="background-color: rgb(104, 214, 141);"></span></div>
+   
+
+</div>
+
+
+
+<br><br>
+   <div class="row subtotals">
+    <div class="col-3"><h6>Total</h6></div>
+    <div class="col-4"> <span id="total" style="background-color: rgb(104, 214, 141);"></span></div>
        </div>
 
     <div id="spinner-wrapper">
